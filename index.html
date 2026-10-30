@@ -40,7 +40,9 @@
 
 /* Base */
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden;overscroll-behavior-x:none}
+/* the page must never move sideways on phones: the window itself cannot scroll left or right, the body clips without becoming a scroller (sticky stays intact) */
+body{overflow-x:hidden;overflow-x:clip}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-display);font-weight:500;font-size:20px;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 img{max-width:100%;display:block}
 h1,h2,h3,p,figure,ol,ul,dl,dd,address{margin:0}
@@ -1037,7 +1039,7 @@ a.sh-addr:hover span{text-decoration:underline}
       <li class="tl-item tl-last" data-reveal data-at="2027-09-05T03:00:00+02:00">
         <div class="tl-time num"><span class="tl-h">03:00</span><span class="tl-u">Uhr</span></div>
         <div class="tl-dot" aria-hidden="true"><svg class="tl-moon" viewBox="0 0 24 24"><path d="M11.37 4.03A8 8 0 1 0 19.68 14.25A6.6 6.6 0 1 1 11.37 4.03Z"/></svg></div>
-        <div class="tl-body"><h3>Letzter Tanz</h3><p>Um 3 Uhr läuft unser letzter Song. Danach geht es mit müden Füßen und einem Lächeln im Gesicht nach Hause oder, wer möchte, noch auf den Fischmarkt.</p></div>
+        <div class="tl-body"><h3>Letzter Tanz</h3><p>Um 3 Uhr läuft unser letzter Song. Danach geht es mit müden Füßen und einem Lächeln im Gesicht nach Hause.</p></div>
       </li>
     </ol>
   </div>
@@ -1057,7 +1059,7 @@ a.sh-addr:hover span{text-decoration:underline}
           <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M20.5 14.5a3.5 3.5 0 1 1 3.5 3.5v3.5"/><path pathLength="1" d="M24 21.5 6 34h36L24 21.5Z"/></svg>
           <h3>Dresscode</h3>
           <p class="info-strong">Schick und festlich</p>
-          <p>Werft euch gern in Schale, ob Kleid, Anzug, Hosenanzug etc. Eine kleine Bitte haben wir: Diese Farben tragen wir zwei. Bitte verzichtet bei euren Outfits auf diese Farben. Accessoires in diesen Tönen sind herzlich willkommen.</p>
+          <p>Werft euch gern in Schale, ob Kleid, Anzug, Jumpsuit etc. Eine kleine Bitte haben wir: Diese Farben tragen wir zwei. Bitte verzichtet bei euren Outfits auf diese Farben. Accessoires in diesen Tönen sind herzlich willkommen.</p>
           <div class="swatches">
             <button class="dc-sw" type="button" style="--c:#FFFFFF;--i:0" data-name="Weiß"><span class="dc-dot"><i></i></span><span class="dc-name">Weiß</span></button>
             <button class="dc-sw" type="button" style="--c:#E5D7C1;--i:1" data-name="Beige"><span class="dc-dot"><i></i></span><span class="dc-name">Beige</span></button>
@@ -1071,7 +1073,7 @@ a.sh-addr:hover span{text-decoration:underline}
         <div class="flap">
           <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><rect pathLength="1" x="6" y="15" width="36" height="24" rx="2"/><path pathLength="1" d="M17 15l2.6-4h8.8l2.6 4"/><circle pathLength="1" cx="24" cy="27" r="6.5"/></svg>
           <h3>Fotos und Videos</h3>
-          <p>Handys und Kameras sind ausdrücklich erwünscht, auch während der freien Trauung! Allerlei <span class="nw">Paparazzi-Bilder</span> und Videos dürfen gerne jederzeit von euch gemacht werden. Auf euren Tischen liegen Kärtchen mit einem QR-Code: einfach scannen und eure Aufnahmen landen direkt bei uns oder über den nachstehenden Button hochladen.</p>
+          <p>Handys und Kameras sind ausdrücklich erwünscht, auch während der freien Trauung! Allerlei <span class="nw">Paparazzi-Bilder</span> und Videos dürfen gerne jederzeit von euch gemacht werden. Auf euren Tischen liegen Kärtchen mit einem QR-Code. Einfach scannen oder den nachstehenden Button anklicken und eure Aufnahmen landen direkt bei uns.</p>
           <div class="btn-row"><a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc2VA2j53tdqnWsMMKhFKhHSPV0ji6pnCoNvT7sqQ1tIR4ckQ/viewform" target="_blank" rel="noopener"><span>Fotos hochladen</span></a></div>
         </div>
       </article>
@@ -1101,7 +1103,7 @@ a.sh-addr:hover span{text-decoration:underline}
         <div class="flap">
           <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M19 34V13l17-4v21"/><circle pathLength="1" cx="15.5" cy="34" r="3.5"/><circle pathLength="1" cx="32.5" cy="30" r="3.5"/></svg>
           <h3>Musikwünsche</h3>
-          <p>Musikwünsche? Immer her damit! Klaas, unser DJ, nimmt jeden Wunsch gern an. Ob euer Song tatsächlich läuft, entscheidet er. Eine Garantie gibt es also nicht.</p>
+          <p>Musikwünsche? Immer her damit! Klaas, unser DJ, nimmt auch vor Ort jeden Wunsch gerne an. Ob euer Song tatsächlich läuft, entscheidet er. Eine Garantie gibt es also nicht.</p>
           <a class="btn btn-ghost btn-sm" href="https://docs.google.com/forms/d/e/1FAIpQLSdrEyLOo2jeGxDMeRGOWxUNCjxZp0uMfSVAOBTorPIBHlam_w/viewform" target="_blank" rel="noopener" data-sheet="musik" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></g></svg><span>Musikwunsch eintragen</span></a>
         </div>
       </article>
